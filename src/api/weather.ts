@@ -5,21 +5,24 @@ import { Cordinates, ForeCastData, GeoCodingResponse, WeatherData } from "./type
 class WeatherAPI{
 
     private createUrl(endpoint:string, params:Record<string, string|number>){
+        
         const searchParams = new URLSearchParams({
             appid: API_CONFIG.API_KEY,
-            ...params
+            ...params,
         })
+        
         return `${endpoint}?${searchParams.toString()}` 
     }
 
     // to check whether response.json is the correct form of return or await??
     private async fetchData<T>(url:string):Promise<T>{
+        
         const response = await fetch(url);
 
         if(!response.ok){
             throw new Error(`Weather API Error: ${response.statusText}`)
         }
-        return await response.json()
+        return response.json()
     }
 
     async getCurrentWeather({lat, lon}:Cordinates):Promise<WeatherData>{
