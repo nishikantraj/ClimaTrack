@@ -10,7 +10,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur py-2 supports-[backdrop-filter]:bg-background/60">
         <div className="flex container mx-auto h-16 items-center justify-between">
             <Link to="/">
-                <img src={isDark? '/vite.svg': '/vite.svg'} alt="log" className="h-14" />
+                <img src={isDark? '/darkn.jpg': '/light.jpeg'} alt="log" className="h-16 rounded-full" />
             </Link>
 
             <div>
