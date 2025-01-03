@@ -87,8 +87,9 @@ const WeatherDashboard = () => {
   return (
     <div className="space-y-4">
       {/* Favourite City */}
+      
       <div className="flex justify-between">
-        <h1 className="text-xl font-bold tracking-tight">{forecastQuery.data.city.name}</h1>
+        <h1 className="text-xl font-bold tracking-tight">My Location</h1>
         <Button 
           variant={"outline"}
           size={"icon"}
